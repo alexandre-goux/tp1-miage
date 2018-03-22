@@ -1,4 +1,6 @@
-# Pré-requis 
+*By Alexandre Goux & Martin Levrard*
+
+# Pré-requis
 * Disposer d'au moins un compte github par binome
 * Apporter son portable (les postes de l'université n'ont pas accès au proxy depuis Eclipse). Pas de préférence pour l'OS (Linux, OSX ou Windows).
 * Disposer d'un accès internet (université ou data)
@@ -30,7 +32,7 @@ __Travailler dans le projet fourni mailreader-ex1-ini__
 
 1) Réusiner la classe `MailComparator`
 
-Raccourcis clavier à connaître : 
+Raccourcis clavier à connaître :
 * ALT-SHIFT-S : fonctions Eclipse de génération de sources (ex : constructeurs)
 * ALT-SHIFT-T : fonctions de réusinage
 * ALT-SHIFT-M : extraction de méthode (sur sélection)
@@ -39,12 +41,12 @@ Raccourcis clavier à connaître :
 # Exercice 2 - Découpage en couches
 _Temps estimé : 20 mins_
 
-1) Réorganiser le code dans les couches standards. 
+1) Réorganiser le code dans les couches standards.
 
-Faire en sorte par exemple que divers frontends puisse récupérer les mails. Nous aurons dans ce TP un seul frontend : un CLI (ligne de commande) qui sera implémenté sous la forme d'une classe `ClientMail` avec `main()`. 
+Faire en sorte par exemple que divers frontends puisse récupérer les mails. Nous aurons dans ce TP un seul frontend : un CLI (ligne de commande) qui sera implémenté sous la forme d'une classe `ClientMail` avec `main()`.
 Cette méthode main attend deux arguments : un booleen `production` qui précise si le mail doit vraiment être envoyé (`true`) ou si nous sommes en environnement de recette (`false`). Le second argument est le sujet du mail.
 
-Rappel : exemple de méthode main qui parse un boolean : 
+Rappel : exemple de méthode main qui parse un boolean :
 ```
 public static void main(String[] args) {
    production = Boolean.parseBoolean(args[0]);
@@ -55,7 +57,7 @@ Conception :
 ![diag sequence](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/bflorat/tp1-miage/master/diag1.puml&ttt=1)
 ![diag classe](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/bflorat/tp1-miage/master/diag2.puml&ttt=1)
 
-Prévoir une cinquième couche `commun` pour les éléments communs à toutes les couches comme les exceptions. 
+Prévoir une cinquième couche `commun` pour les éléments communs à toutes les couches comme les exceptions.
 
 `MailSender` est une interface, le choix de l'implémentation est fait par l'application en fonction de la valeur du booléen `production`.
 
@@ -107,4 +109,3 @@ Ecrire un scenario simple au format textuel et les steps correspondants.
 
 # Cleanup
 Si vous le désirez, vous pourrez supprimer votre projet github mais pas avant fin juin (noté)
-
