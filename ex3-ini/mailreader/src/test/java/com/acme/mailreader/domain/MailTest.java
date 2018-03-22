@@ -2,7 +2,9 @@ package com.acme.mailreader.domain;
 
 import java.time.Instant;
 
-import org.junit.Ignore;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+
 import org.junit.Test;
 
 import com.acme.mailreader.utils.DateIncorrecteException;
@@ -23,6 +25,32 @@ public class MailTest {
 		
 	}
 	
+	@Test
+	public final void vraiSiMailImportant() {
+		Mail mail = new Mail();
+		mail.setImportant(true);
+		
+		assertThat(mail.isImportant(), is(true));		
+		
+	}	
 	
+	@SuppressWarnings("null")
+	@Test
+	public final void egauxSiDeuxMailsInstanciesSimplement() {
+		Mail mail1 = new Mail();
+		Mail mail2 = new Mail();
+		assertThat(mail1.equals(mail2), is(true));
+		
+	}
+	
+	public final void differentSiUnMailSansAttribut() {
+		Mail mail1 = new Mail();
+		mail1.setImportant(true);
+		Mail mail2 = new Mail();
+		
+		assertThat(mail1.equals(mail2), is(false));
+	}
+	
+
 
 }
