@@ -30,7 +30,10 @@ public class MailComparaisonStep {
 
 	private Mail mail1;
 	private Mail mail2;
+	
 	private int resultatTri;
+	private int resultatTriParSujet;
+	
 	private String resultatComparaison;
 	Comparator<Mail> comparator = new MailComparator();
 	private static final Map<Integer, String> resuAsString = new HashMap<Integer, String>();
@@ -70,4 +73,5 @@ public class MailComparaisonStep {
 			assertThat(resultatTri, is(MailComparator.PREMIER_PLUS_PETIT));
 		}
 	}
+	
 }
